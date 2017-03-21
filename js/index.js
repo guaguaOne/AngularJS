@@ -25,7 +25,7 @@
 	}])
 	.controller('comicCtrl', function($scope,$http){
 		$scope.getDetial=function($id){
-			console.log("id="+$id);
+//			console.log("id="+$id);
 			$http({
 				method:'POST',
 				url:'http://192.168.1.122/anjular.js/Demo7/php/comic_detial.php',
@@ -41,7 +41,8 @@
 	                return str.join("&"); 
 				}
 			}).then(function successCallback(msg){
-				console.log("ok"+msg);
+//				console.log(msg.data.showapi_res_body.item.imgList);
+				$scope.detials=msg.data.showapi_res_body.item.imgList;
 			}, function errorCallback(msg){
 				console.log("error"+msg);
 			})

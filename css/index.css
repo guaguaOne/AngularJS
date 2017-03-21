@@ -44,3 +44,6 @@ header span.comic,span.music{
 #content div.row p{
 	text-align: center;
 }
+#content img{
+	width: 100%;
+}
