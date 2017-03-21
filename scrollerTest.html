@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular.min.js"></script>
+</head>
+<body ng-app="app">
+<div id="a" style="border: 1px solid #999;width: 200px;height: 200px;overflow: scroll;">
+	<div id="b" style="background: pink;width: 180px;height: 300px;">b</div>
+</div>
+	<div ng-controller="ctrl">
+		<input id="id" type="text" ng-model="name">
+	</div>
+</body>
+<script>
+// console.log($(document).height());
+	$(document).ready(function(){
+		$("#a").scroll(function() {
+			$("#id").val($("#a").scrollTop());
+		})
+	})
+
+	angular.module('app',[])
+	.controller('ctrl',function($scope){
+		$scope.name=0;
+		// $("#b").scroll(function(event) {
+		// 	console.log(111);
+			// $scope.name=$("#b").scrollTop();
+			// console.log($scope.name);
+		// });
+		$scope.$watch('name',function(newV,old){
+			if(newV==old){
+				console.log("new==old");
+			}else{
+				console.log("new:"+newV);
+				console.log("old:"+old);
+			}
+		})
+	})
+
+</script>
+</html>

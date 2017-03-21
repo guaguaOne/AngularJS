@@ -6,7 +6,7 @@
     $paramArr = array(
          'showapi_appid'=> $showapi_appid,
          'type'=>"/category/weimanhua/gushimanhua",
-         'page'=>1
+         'page'=>$_POST['page']
          //添加其他参数
     );
      
