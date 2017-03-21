@@ -197,7 +197,7 @@
                      /*720P高分屏启动图片，分辨率：720x1242*/
                     /*1080P高分屏启动图片，分辨率：1080x1882*/
                 }
-            }
+            },"debug":true
         }
-    },"fullscreen":true
+    },"fullscreen":false
 }

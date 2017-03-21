@@ -10,16 +10,16 @@
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="http://192.168.1.122/anjular.js/Demo7/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="http://192.168.1.122/anjular.js/Demo7/css/index.css" />
+	<script src="http://192.168.1.122/anjular.js/Demo7/js/index.js" type="text/javascript"></script>
 </head>
 <body ng-app="app">
 	<header>
 		<span><img src="http://192.168.1.122/anjular.js/Demo7/img/face.png" alt="" /></span>
-		<span class="comic"><a href="#/">Comic</a></span>
-		<span class="music"><a href="#/music">Music</a></span>
+		<span class="comic"><a ng-href="#/">Comic</a></span>
+		<span class="music"><a ng-href="#/music">Music</a></span>
 	</header>
 	<div id="content" ng-controller="comicCtrl">
 		<div ng-view></div>
 	</div>
-	<script src="http://192.168.1.122/anjular.js/Demo7/js/index.js" type="text/javascript"></script>
 </body>
 </html>

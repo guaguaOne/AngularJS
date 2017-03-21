@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-xs-6" ng-repeat="x in names">
 		<div class="box" ng-click="getDetial(x.id)">
-			<img src="" alt="" onerror="this.src='img/face.png'">
+			<img ng-src="{{x.thumbnailList[0]}}" alt="" onerror="this.src='http://192.168.1.122/anjular.js/Demo7/img/face.png'">
 		</div>
 		<p>{{x.title.split("《")[1].split("》")[0]}}</p>
 	</div>

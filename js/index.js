@@ -21,7 +21,7 @@
 		)
 		.when('/music',{templateUrl:'music.html'})
 		.when('/comicDetial',{templateUrl:'comic_detial.html'})
-		.otherwise({redirectTo:'/comic'});
+		.otherwise({redirectTo:'/'});
 	}])
 	.controller('comicCtrl', function($scope,$http){
 		$scope.getDetial=function($id){
@@ -43,10 +43,13 @@
 			}).then(function successCallback(msg){
 //				console.log(msg.data.showapi_res_body.item.imgList);
 				$scope.detials=msg.data.showapi_res_body.item.imgList;
+				var len=$scope.detials.length;
+				if(len>1){
+					location.href="#/comicDetial";
+				}
 			}, function errorCallback(msg){
 				console.log("error"+msg);
 			})
-			location.href="http://192.168.1.122/anjular.js/Demo7/#/comicDetial";
 		}
 	});
 	
