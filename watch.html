@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular-route.min.js"></script>
+</head>
+<body>
+	<div ng-app="app">
+		<form name="myForm" ng-controller="watCtrl as dateCtrl">
+			<input type="date" ng-model="value" placeholder="yyyy-MM-dd" min="2013-03-01" max="2013-12-22" required ng-change="change(value)">
+			<span class="error" ng-show="myForm.input.$error.required">
+				required!
+			</span>
+			<span class="error" ng-show="myForm.input.$error.date">
+				不是有效值
+			</span>
+			<span class="error" ng-show="myForm.input.$error.max">
+				max
+			</span>
+			<span class="error" ng-show="myForm.input.$error.min">
+				min
+			</span>
+		</from>
+	</div>
+	<script>
+		angular.module('app', [])
+		.controller('watCtrl', ['$scope', function($scope){
+			$scope.value = new Date(2013,8,28);
+			$scope.change=function($val){
+				console.log($val);
+			}
+		}])
+	
+	</script>
+</body>
+</html>
