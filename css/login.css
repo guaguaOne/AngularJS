@@ -1,0 +1,21 @@
+#loginBox{
+	width: 100%;
+	height: 300px;
+	position: absolute;
+	top: 50%;
+	margin-top: -180px;
+	padding-top: 30px;
+	border: 1px solid #333;
+}
+#loginBox form p{
+	border: 1px solid pink;
+	text-align: center;
+}
+#loginBox form p span{
+	font-size: smaller;
+}
+#loginBox form p img{
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+}

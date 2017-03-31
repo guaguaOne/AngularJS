@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Document</title>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/angular-file-upload/1.3.1/angular-file-upload.js"></script>
+	<link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/login.css">
+	<script src="js/register.js"></script>
+</head>
+<body ng-controller="regiCtrl">
+	<div id="loginBox">
+		<form onsubmit="return false;" name="userLogin" enctype="multipart/form-data">
+			<p>
+				<img src="{{user.face}}">
+			</p>
+			<p>
+				昵称：<input type="text" name="user" ng-model="user.name" required/>
+				<span ng-show="userLogin.user.$valid" style="color: green;">
+					<span class="glyphicon glyphicon-ok"></span>
+				</span>
+				<div ng-show="userLogin.user.$error.required" style="color: red;text-align: center;">
+					<span class="glyphicon glyphicon-remove"></span>
+					昵称不能为空
+				</div>
+			</p>
+			<p>
+				账号：<input type="email" name="account" ng-model="user.account" required />
+				<span ng-show="userLogin.account.$valid" style="color: green;">
+					<span class="glyphicon glyphicon-ok"></span>
+				</span>
+				<div ng-show="userLogin.account.$error.required" style="color: red;text-align: center;">
+					<span class="glyphicon glyphicon-remove"></span>
+					邮箱不能为空
+				</div>
+				<div ng-show="userLogin.account.$error.email" style="color: red;text-align: center;">
+					<span class="glyphicon glyphicon-remove"></span>
+					邮箱不合法
+				</div>
+			</p>
+			<p>
+				密码：<input type="password" name="password" ng-minlength=6 ng-maxlength=12 ng-model="user.password" required />
+				<span ng-show="userLogin.password.$valid" style="color: green;">
+					<span class="glyphicon glyphicon-ok"></span>
+				</span>
+				<div ng-show="userLogin.password.$error.required" style="color: red;text-align: center;">
+					<span class="glyphicon glyphicon-remove"></span>
+					密码不能为空
+				</div>
+				<div ng-show="userLogin.password.$error.minlength" style="color: red;text-align: center;">
+					<span class="glyphicon glyphicon-remove"></span>
+					密码长度不小于6
+				</div>
+				<div ng-show="userLogin.password.$error.maxlength" style="color: red;text-align: center;">
+					<span class="glyphicon glyphicon-remove"></span>
+					密码长度不大于12
+				</div>
+			</p>
+			<p><button class="btn btn-primary" ng-click="register()">注册</button></p>
+		</form>
+	</div>
+</body>
+</html>

@@ -86,3 +86,6 @@ header span.comic,span.music{
 	margin-right: 10px;
 	border-radius: 25px;
 }
+#left a{
+	color: #333;
+}
